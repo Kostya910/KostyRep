@@ -15,7 +15,7 @@ public:
 		srand(time(0));
 		for (int i = 0; i <= size; i++) 
 		{
-			arr[i] = rand() % 100 + 1;
+			arr[i] = rand() % 10 + 1;
 			cout << arr[i] << " " << "\t";
 		}
 	}
@@ -31,16 +31,16 @@ public:
 	int getAverage(int size) 
 	{
 		int Average, Sum = getSum(size);
-		Average = Sum / size;
+		Average = Sum / (size + 1);
 		return Average;
 	}
 	int getVarianse(int size)
 	{
 		int avarage = getAverage(size);
-		int Disp;
+		int Disp(0);
 		for (int i = 0; i <= size; i++)
 		{
-			Disp = size * (pow((i - avarage), 2));
+			Disp += (size + 1) * (pow((arr[i] - avarage), 2));
 		}
 		return Disp;
 	}
